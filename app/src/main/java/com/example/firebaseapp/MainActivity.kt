@@ -5,7 +5,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.database
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var passwordEditText: EditText
     private lateinit var loginButton: Button
     private lateinit var signupButton: Button
+    private lateinit var addTodoButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         passwordEditText = findViewById(R.id.passwordEditText)
         loginButton = findViewById(R.id.loginButton)
         signupButton = findViewById(R.id.signupButton)
+        addTodoButton = findViewById(R.id.addTodoButton)
 
         // Set up click listeners
         loginButton.setOnClickListener {
@@ -36,6 +40,12 @@ class MainActivity : AppCompatActivity() {
         signupButton.setOnClickListener {
             signupUser()
         }
+
+        addTodoButton.setOnClickListener {
+            addTodo()
+        }
+
+
     }
 
     private fun loginUser() {
@@ -78,5 +88,13 @@ class MainActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "Please fill out all fields", Toast.LENGTH_SHORT).show()
         }
+    }
+
+
+    private fun addTodo() {
+        val database = Firebase.database
+        val ref = database.getReference("todos")
+        val todo = Todo("Buy groceries", false)
+        ref.push().setValue(todo)
     }
 }
