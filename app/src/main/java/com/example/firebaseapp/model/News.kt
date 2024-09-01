@@ -1,4 +1,4 @@
-package com.example.newsapp
+package com.example.firebaseapp.model
 
 data class News(
     val title: String,

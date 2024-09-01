@@ -1,10 +1,11 @@
-package com.example.newsapp
+package com.example.firebaseapp.ui.news
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.firebaseapp.model.News
 import com.example.firebaseapp.R
 
 class NewsAdapter(

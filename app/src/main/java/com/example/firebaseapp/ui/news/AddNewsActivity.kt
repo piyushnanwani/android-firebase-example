@@ -1,11 +1,12 @@
-package com.example.firebaseapp
+package com.example.firebaseapp.ui.news
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.newsapp.News
+import com.example.firebaseapp.model.News
+import com.example.firebaseapp.R
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
