@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">FirebaseApp</string>
     <string name="email">Email</string>
+    <string name="news_icon_desc">News item - notification item</string>
+    <string name="news_main_title">News: Around the World</string>
+    <string name="news_image_desc">Image description\n</string>
 </resources>
